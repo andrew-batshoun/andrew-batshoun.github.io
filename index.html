@@ -8,13 +8,35 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/2d89a8328f.js" crossorigin="anonymous"></script>
 
     <title>My personal page</title>
+    <style>
+        img {
+            border-radius: 8px;
+            border: 2px solid white;
+            filter: drop-shadow(30px 10px 4px lightslategray);
+        }
+
+        main {
+            background: lightgrey;
+        }
+        .card, .card-body{
+            border-radius: 20px;
+        }
+
+        footer {
+            background: lightgrey;
+        }
+
+
+    </style>
 </head>
 <body>
 
 <!--navbar-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">ANDREW BATSHOUN</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,75 +52,101 @@
         </div>
     </div>
 </nav>
-<header class="container" style="width: 80%; margin: 0 auto; padding-top: 2em">
-    <div class="row">
-        <div class="col-4 d-flex flex-column justify-content-center" style="padding-left: 4em;">
-               <div><h2>Hi, I'm Andrew</h2></div>
-           <div><p>Software Developer</p></div>
 
-        </div>
-        <div class="col-2 ">
-<!-- using for blank space-->
+<header>
+    <div class="container" style="width: 80%; margin: 0 auto; padding-top: 2em; padding-bottom: 2em;">
+        <div class="row">
+            <div class="col-4 d-flex flex-column justify-content-center" style="padding-left: 4em;">
+                <div><h2>Hi, I'm Andrew</h2></div>
+                <div><p>Software Developer</p></div>
 
-        </div>
-        <div class="col-4">
-            <img src="img/profile%20picture.jpg" height="auto" width="auto" class="img-fluid" style="margin-left: 3em"
-                 alt="andrew">
+            </div>
+            <div class="col-2 ">
+                <!-- using for blank space-->
+
+            </div>
+            <div class="col-4">
+                <img src="img/profile%20picture.jpg" height="auto" width="auto" class="img-fluid"
+                     style="margin-left: 3em; "
+                     alt="andrew">
+            </div>
         </div>
     </div>
 </header>
-<main style="width: 80%; margin: 0 auto; padding-top: 2em;">
-    <h4>About Me</h4>
-    <p>I served the US Army for 8 years as an Aircraft Technician. There, I developed an ever-growing interest
-    of the Tech industry such as networking, Cyber-security, clouding computing, and much more. It all was so new and captivating.  After completing my service in the Army I was honorably discharged, I moved place to place till I settled down in North Carolina. </p>
-    <br>
-    <p>I completed my degree in Cyber-Security and Networking.  I am also blessed to be able to attend Codeup's web developer program that set me on the path I belong. I am a problem solver eager to learn and showcase my skills and talent. Motivated to expand current skill set through new challenges and ready to contribute to life changing projects.  </p>
-    <br>
-    <p>When I am not programing or networking, I am spending time with family and switch my focus to my hobbies which are: reading, hiking, running, fishing, and participating in Jiu-Jitsu. </p>
+<main>
+    <div style="width: 80%; margin: 0 auto; padding-top: 2em; padding-bottom: 2em;">
+        <h4>About Me</h4>
+        <p>I served the US Army for 8 years as an Aircraft Technician. There, I developed an ever-growing interest
+            of the Tech industry such as networking, Cyber-security, clouding computing, and much more. It all was so
+            new
+            and captivating. After completing my service in the Army I was honorably discharged, I moved place to place
+            till
+            I settled down in North Carolina. </p>
+        <br>
+        <p>I completed my degree in Cyber-Security and Networking. I am also blessed to be able to attend Codeup's web
+            developer program that set me on the path I belong. I am a problem solver eager to learn and showcase my
+            skills
+            and talent. Motivated to expand current skill set through new challenges and ready to contribute to life
+            changing projects. </p>
+        <br>
+        <p>When I am not programming or dealing with other projects, I am spending time with family and switch my focus
+            to my hobbies which
+            are: reading, hiking, running, fishing, and participating in Jiu-Jitsu. </p>
+    </div>
 </main>
-<section style="width: 80%; margin: 0 auto; padding-top: 2em;">
-    <h4>Projects</h4>
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+<section>
+    <div style="width: 80%; margin: 0 auto; padding-top: 2em; padding-bottom:2em">
+        <h4>Projects</h4>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body bg-dark" style="color: white">
+                        <h5 class="card-title">Movie Database</h5>
+                        <p class="card-text">A pair programming project utilizing HTML, Bootstrap, and Javascript with
+                            JQuery. Users are able to
+                            add, edit, and delete movie selections.</p>
+                        <a href="https://github.com/diaz-batshoun/movie_database" style="float: right" ><i class="fab fa-github-square fa-3x"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body bg-dark" style="color: white">
+                        <h5 class="card-title">Weather Application</h5>
+                        <p class="card-text">Using Mapbox and Open weather API, this web application allows users to
+                            choose a location, either by
+                            dragging and dropping a marker on the map or searching by name. The application will then
+                            give a five-day forecast of the selected
+                            location.</p>
+                        <a href="https://github.com/andrew-batshoun/weather_project" style="float: right" ><i class="fab fa-github-square fa-3x"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body bg-dark" style="color: white">
+                        <h5 class="card-title">Coffee Project</h5>
+                        <p class="card-text">A pair programming project that utilized HTML, JavaScript, Bootstrap and
+                            CSS. Users are able to
+                            select coffee by roast and name. Users can also add a new coffee to the current list.</p>
+                        <a href="https://github.com/dobbs-batshoun/coffee-project" style="float: right" ><i class="fab fa-github-square fa-3x"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<footer style="width: 80%; margin: 0 auto; padding-top: 2em;">
-    <h4>Contact Me</h4>
+
+<footer>
+    <div style="width: 80%; margin: 0 auto; padding-top: 2em;">
+        <h4>Contact Me</h4>
+        <br>
+        <a href="mailto:andrawes.batshoun@gmail.com" ><i class="far fa-envelope fa-2x"></i></a>
+        <a href="https://github.com/andrew-batshoun" ><i class="fab fa-github fa-2x"></i></i></a>
+        <a href="www.linkedin.com/in/abats89" ><i class="fab fa-linkedin fa-2x"></i></a>
+    </div>
+    <br>
+    <br>
 </footer>
 
 <!--  jQuery and Bootstrap Bundle  -->
