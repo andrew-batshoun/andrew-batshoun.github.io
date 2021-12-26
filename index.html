@@ -48,11 +48,9 @@
         }
 
         /* Modal Content (image) */
-        .modal-content {
+        #modal-img {
             margin: auto;
             display: block;
-            width: 80%;
-            max-width: 700px;
         }
 
         /* Caption of Modal Image */
@@ -68,7 +66,7 @@
         }
 
         /* Add Animation */
-        .modal-content, #caption {
+        #modal-img, #caption {
             animation-name: zoom;
             animation-duration: 0.6s;
         }
@@ -98,8 +96,8 @@
 
         /* 100% Image Width on Smaller Screens */
         @media only screen and (max-width: 700px){
-            .modal-content {
-                width: 100%;
+            #modal-img {
+
             }
         }
 
@@ -128,25 +126,23 @@
 
 <header>
     <div class="container" style="width: 80%; margin: 0 auto; padding-top: 2em; padding-bottom: 2em;">
-        <div class="row">
+        <div class="row d-flex justify-content-center">
             <div class="col-4 d-flex flex-column justify-content-center" style="padding-left: 4em;">
                 <div><h2>Hi, I'm Andrew</h2></div>
                 <div><p>Software Developer</p></div>
 
             </div>
-            <div class="col-2 ">
-                <!-- using for blank space-->
+<!--            <div class="col-2 ">-->
+<!--                &lt;!&ndash; using for blank space&ndash;&gt;-->
 
-            </div>
-            <div class="col-4">
-                <img src="img/profile%20picture.jpg" height="auto" width="auto" class="img-fluid" id="my-img"
+<!--            </div>-->
+            <div class="col-6 " >
+                <img src="img/profile%20picture.jpg" height="300px" width="300px" class="img-fluid" id="my-img"
                      style="margin-left: 3em; "
                      alt="ANDRAWES BATSHOUN">
                 <div id="myModal" class="modal">
                     <span class="close">&times;</span>
-                    <img src="img/profile%20picture.jpg" height="500" width="500" id="modal-img"
-                         style="position: center "
-                         >
+                    <img src="img/profile%20picture.jpg" height="500px" width="500px" id="modal-img">
                     <div id="caption"></div>
                 </div>
             </div>
