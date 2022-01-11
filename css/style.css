@@ -1,0 +1,33 @@
+/*Banner on top of page*/
+.jumbotron {
+    background-image: url("/img/coffeebanner.jpeg");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover;
+    top: 3em;
+}
+/* Coffee Title on top of page */
+.display-4{
+    background-color: black;
+    color: white;
+    opacity: 50%;
+    border-radius: 50%;
+}
+/*horizontal line*/
+.hr-line{
+    width: 85%;
+    border: 1px lightgrey solid;
+}
+/*container for coffee objects*/
+#coffee-align{
+    width: 100%;
+}
+/*this is wrapping the rendered coffee*/
+.style-coffee{
+    display: flex;
+    flex-flow: wrap;
+}
+/*all h1 tags */
+h1{
+    font-family: Georgia;
+}
