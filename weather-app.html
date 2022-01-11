@@ -73,7 +73,7 @@
 
         //function to receive five day forecast
         function getWeather(lat, lon) {
-            $.get("http://api.openweathermap.org/data/2.5/onecall", {
+            $.get("https://api.openweathermap.org/data/2.5/onecall", {
                 APPID: WEATHER_KEY,
                 lat: lat,
                 lon: lon,
@@ -125,7 +125,7 @@
                 //loop to only get five days
                 for (let i = 0; i < 5; i++) {
                     var weatherDay = new Date(data.daily[i].dt * 1000).toString();
-                    var weatherIcon = "http://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png";
+                    var weatherIcon = "https://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png";
 
                     //html setup of cards, renders on weather-cards class
                     let html = "";
