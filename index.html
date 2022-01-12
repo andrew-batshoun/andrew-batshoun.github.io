@@ -99,9 +99,26 @@
 
         /* 100% Image Width on Smaller Screens */
         @media only screen and (max-width: 700px){
-            #modal-img {
+            #row-top{
+                display: flex;
+                flex-flow: column;
+                margin: 0 auto;
+                width: 100%;
 
             }
+            #hello{
+                width: 100%;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+            }
+            footer{
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+                text-align: center;
+            }
+
         }
 
 
@@ -129,17 +146,18 @@
 
 <header>
     <div class="container" style="width: 80%; margin: 0 auto; padding-top: 2em; padding-bottom: 2em;">
-        <div class="row d-flex justify-content-center">
-            <div class="col-4 d-flex flex-column justify-content-center" style="padding-left: 4em;">
+        <div class="row d-flex justify-content-center" id = "row-top">
+            <div class="col d-flex flex-column justify-content-center" id ="hello" style="padding-left: 4em; text-align: center;">
                 <div><h2>Hi, I'm Andrew</h2></div>
                 <div><p>Software Developer</p></div>
+
 
             </div>
 <!--            <div class="col-2 ">-->
 <!--                &lt;!&ndash; using for blank space&ndash;&gt;-->
 
 <!--            </div>-->
-            <div class="col-6 " >
+            <div class="col " >
                 <img src="img/profile%20picture.jpg" height="300px" width="300px" class="img-fluid" id="my-img"
                      style="margin-left: 3em; "
                      alt="ANDRAWES BATSHOUN">
@@ -220,7 +238,7 @@
 </section>
 
 <footer id="contact">
-    <div style="width: 80%; margin: 0 auto; padding-top: 2em;">
+    <div  style="width: 80%; margin: 0 auto; padding-top: 2em;">
         <h4>Contact Me</h4>
         <br>
         <a href="mailto:andrawes.batshoun@gmail.com" ><i class="far fa-envelope fa-2x"></i></a>
