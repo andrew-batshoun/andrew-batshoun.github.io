@@ -123,7 +123,7 @@ $('#addBtn').click(function (event) {
     event.preventDefault()
 
 
-    return fetch("http://www.omdbapi.com/?t=" + $('#movieInput').val() + "&apikey=" + movieApi).then(response => response.json()).then(data => {
+    return fetch("https://www.omdbapi.com/?t=" + $('#movieInput').val() + "&apikey=" + movieApi).then(response => response.json()).then(data => {
         let createdMovie = {
             title: data.Title,
             poster: data.Poster,
