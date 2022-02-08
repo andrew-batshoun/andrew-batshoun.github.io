@@ -16,38 +16,60 @@
         html {
             scroll-behavior: smooth;
         }
+
+        body {
+            padding-top: 2em;
+            margin-top: 3em;
+        }
+
         #my-img {
             border-radius: 8px;
             border: 2px solid white;
             filter: drop-shadow(30px 10px 4px lightslategray);
         }
-        #my-img{
+
+        #my-img {
             transition: 0.3s;
+        }
+        nav{
+            display: flex;
+            justify-content: end;
         }
 
         main {
             background: lightgrey;
         }
-        .card, .card-body{
+
+        .card, .card-body {
             border-radius: 20px;
         }
 
         footer {
             background: lightgrey;
+            padding: 2em 0;
+            display: flex;
+            flex-flow: column;
+            flex-wrap: wrap;
+            align-content: center;
+            text-align: center;
+
+
         }
+
         /* The Modal (background) */
         .modal {
             display: none; /* Hidden by default */
             position: fixed; /* Stay in place */
             z-index: 1; /* Sit on top */
             padding-top: 100px; /* Location of the box */
+            margin-top: 2em;
             left: 0;
             top: 0;
             width: 100%; /* Full width */
             height: 100%; /* Full height */
             overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
         }
 
         /* Modal Content (image) */
@@ -75,8 +97,12 @@
         }
 
         @keyframes zoom {
-            from {transform: scale(0.1)}
-            to {transform: scale(1)}
+            from {
+                transform: scale(0.1)
+            }
+            to {
+                transform: scale(1)
+            }
         }
 
         /* The Close Button */
@@ -84,7 +110,7 @@
             position: absolute;
             top: 15px;
             right: 35px;
-            color: #f1f1f1;
+            color: orangered;
             font-size: 40px;
             font-weight: bold;
             transition: 0.3s;
@@ -98,26 +124,22 @@
         }
 
         /* 100% Image Width on Smaller Screens */
-        @media only screen and (max-width: 700px){
-            #row-top{
+        @media only screen and (max-width: 700px) {
+            #row-top {
                 display: flex;
                 flex-flow: column;
                 margin: 0 auto;
                 width: 100%;
 
             }
-            #hello{
+
+            #hello {
                 width: 100%;
                 text-align: center;
                 margin: 0;
                 padding: 0;
             }
-            footer{
-                display: flex;
-                flex-flow: column;
-                align-items: center;
-                text-align: center;
-            }
+
 
         }
 
@@ -127,37 +149,38 @@
 <body>
 
 <!--navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="top">
-    <a class="navbar-brand" href="#">ANDREW BATSHOUN</a>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" id="top">
+    <a class="navbar-brand" href="#">AB</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-link active" href="#about-me">About <span class="sr-only">(current)</span></a>
-            <a class="nav-link active" href="#projects">Projects</a>
-            <a class="nav-link active" href="#contact">Contact</a>
+    <div class="collapse navbar-collapse d-flex" id="navbarNavAltMarkup">
 
-
+        <div class="navbar-nav ">
+            <a class="nav-link active " href="#about-me">About <span class="sr-only">(current)</span></a>
+            <a class="nav-link active " href="#projects">Projects</a>
+            <a class="nav-link active " href="#contact">Contact</a>
+            <a class="nav-link active " href="document/resume.pdf">Resume</a>
         </div>
     </div>
 </nav>
 
 <header>
     <div class="container" style="width: 80%; margin: 0 auto; padding-top: 2em; padding-bottom: 2em;">
-        <div class="row d-flex justify-content-center" id = "row-top">
-            <div class="col d-flex flex-column justify-content-center" id ="hello" style="padding-left: 4em; text-align: center;">
-                <div><h2>Hi, I'm Andrew</h2></div>
+        <div class="row d-flex justify-content-center" id="row-top">
+            <div class="col d-flex flex-column justify-content-center" id="hello"
+                 style="padding-left: 4em; text-align: center;">
+                <div><h2>Hi, I'm Andrew Batshoun</h2></div>
                 <div><p>Software Developer</p></div>
 
 
             </div>
-<!--            <div class="col-2 ">-->
-<!--                &lt;!&ndash; using for blank space&ndash;&gt;-->
+            <!--            <div class="col-2 ">-->
+            <!--                &lt;!&ndash; using for blank space&ndash;&gt;-->
 
-<!--            </div>-->
-            <div class="col " >
+            <!--            </div>-->
+            <div class="col ">
                 <img src="img/profile%20picture.jpg" height="300px" width="300px" class="img-fluid" id="my-img"
                      style="margin-left: 3em; "
                      alt="ANDRAWES BATSHOUN">
@@ -203,7 +226,8 @@
                             JQuery. Using RESTful API with fetch requests from OMDB api Users are able to
                             add, edit, and delete movie selections.</p>
                         <a href="movies-database.html" target="_blank">View Project</a>
-                        <a href="https://github.com/diaz-batshoun/movie_database" target="_blank" style="float: right" ><i class="fab fa-github-square fa-3x"></i></a>
+                        <a href="https://github.com/diaz-batshoun/movie_database" target="_blank"
+                           style="float: right"><i class="fab fa-github-square fa-3x"></i></a>
                     </div>
                 </div>
             </div>
@@ -217,7 +241,8 @@
                             give a five-day forecast of the selected
                             location.</p>
                         <a href="weather-app.html" target="_blank">View Project</a>
-                        <a href="https://github.com/andrew-batshoun/weather_project" target="_blank" style="float: right" ><i class="fab fa-github-square fa-3x"></i></a>
+                        <a href="https://github.com/andrew-batshoun/weather_project" target="_blank"
+                           style="float: right"><i class="fab fa-github-square fa-3x"></i></a>
                     </div>
                 </div>
             </div>
@@ -229,7 +254,8 @@
                             CSS. Users are able to
                             select coffee by roast and name. Users can also add a new coffee to the current list.</p>
                         <a href="coffee-project.html" target="_blank">View Project</a>
-                        <a href="https://github.com/dobbs-batshoun/coffee-project" target="_blank" style="float: right" ><i class="fab fa-github-square fa-3x"></i></a>
+                        <a href="https://github.com/dobbs-batshoun/coffee-project" target="_blank" style="float: right"><i
+                                class="fab fa-github-square fa-3x"></i></a>
                     </div>
                 </div>
             </div>
@@ -238,16 +264,16 @@
 </section>
 
 <footer id="contact">
-    <div  style="width: 80%; margin: 0 auto; padding-top: 2em;">
-        <h4>Contact Me</h4>
-        <br>
-        <a href="mailto:andrawes.batshoun@gmail.com" ><i class="far fa-envelope fa-2x"></i></a>
-        <a href="https://github.com/andrew-batshoun" target="_blank" ><i class="fab fa-github fa-2x"></i></i></a>
+
+    <h4>Contact Me</h4>
+    <br>
+    <div>
+        <a href="mailto:andrawes.batshoun@gmail.com"><i class="far fa-envelope fa-2x"></i></a>
+        <a href="https://github.com/andrew-batshoun" target="_blank"><i class="fab fa-github fa-2x"></i></i></a>
         <a href="https://www.linkedin.com/in/abats89" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
     </div>
-    <br>
-    <br>
-    <a href="#top" class="d-flex justify-content-center">Go to the top of the page</a>
+
+
 </footer>
 
 <!--  jQuery and Bootstrap Bundle  -->
@@ -258,12 +284,12 @@
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous"></script>
 <script>
-    $('#my-img').click(function(){
-        $('#myModal').css('display','block');
+    $('#my-img').click(function () {
+        $('#myModal').css('display', 'block');
         $('#img01').src = this.src;
         $('#caption').html(this.alt);
     })
-    $('.close').click(function(){
+    $('.close').click(function () {
         $('#myModal').css('display', 'none');
     })
 </script>
