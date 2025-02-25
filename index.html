@@ -1,270 +1,94 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Batshoun | Portfolio</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <!-- font awesome -->
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/2d89a8328f.js" crossorigin="anonymous"></script>
 
-    <title>My personal page</title>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 
-        body {
-            padding-top: 2em;
-            margin-top: 3em;
-        }
-
-        #my-img {
-            border-radius: 8px;
-            border: 2px solid white;
-            filter: drop-shadow(30px 10px 4px lightslategray);
-        }
-
-        #my-img {
-            transition: 0.3s;
-        }
-
-        main {
-            background: lightgrey;
-        }
-
-        .card, .card-body {
-            border-radius: 20px;
-        }
-
-        footer {
-            background: lightgrey;
-            padding: 2em 0;
-            display: flex;
-            flex-flow: column;
-            flex-wrap: wrap;
-            align-content: center;
-            text-align: center;
-
-
-        }
-
-        /* The Modal (background) */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            padding-top: 100px; /* Location of the box */
-            margin-top: 2em;
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0, 0, 0); /* Fallback color */
-            background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
-        }
-
-        /* Modal Content (image) */
-        #modal-img {
-            margin: auto;
-            display: block;
-        }
-
-        /* Caption of Modal Image */
-        #caption {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-            text-align: center;
-            color: #ccc;
-            padding: 10px 0;
-            height: 150px;
-        }
-
-        /* Add Animation */
-        #modal-img, #caption {
-            animation-name: zoom;
-            animation-duration: 0.6s;
-        }
-
-        @keyframes zoom {
-            from {
-                transform: scale(0.1)
-            }
-            to {
-                transform: scale(1)
-            }
-        }
-
-        /* The Close Button */
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: orangered;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        /* 100% Image Width on Smaller Screens */
-        @media only screen and (max-width: 700px) {
-            #row-top {
-                display: flex;
-                flex-flow: column;
-                margin: 0 auto;
-                width: 100%;
-
-            }
-
-            #hello {
-                width: 100%;
-                text-align: center;
-                margin: 0;
-                padding: 0;
-            }
-
-
-        }
-
-
-    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!--navbar-->
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" id="top">
-    <a class="navbar-brand" href="#">AB</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-link active " href="#about-me">About <span class="sr-only">(current)</span></a>
-            <a class="nav-link active " href="#projects">Projects</a>
-            <a class="nav-link active " href="#contact">Contact</a>
-            <a class="nav-link active " href="document/resume.pdf" target="_blank">Resume</a>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">AB</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#about-me">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="document/resume.pdf" target="_blank">Resume</a></li>
+            </ul>
         </div>
     </div>
 </nav>
 
-<header>
-    <div class="container" style="width: 80%; margin: 0 auto; padding-top: 2em; padding-bottom: 2em;">
-        <div class="row d-flex justify-content-center" id="row-top">
-            <div class="col d-flex flex-column justify-content-center" id="hello"
-                 style="padding-left: 4em; text-align: center;">
-                <div><h2>Hi, I'm Andrew Batshoun</h2></div>
-                <div><p>Software Developer</p></div>
+<!-- Hero Section -->
+<header class="hero d-flex align-items-center">
+    <div class="container text-center">
+        <h1 class="fw-bold">Hi, I'm Andrew Batshoun</h1>
+        <p class="lead">Software Developer | Problem Solver | Tech Enthusiast</p>
+        <a href="#projects" class="btn btn-primary mt-3">View My Work</a>
+    </div>
+</header>
 
-
+<!-- About Me Section -->
+<section id="about-me" class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="img/profile picture.jpg" alt="Andrew Batshoun" class="img-fluid rounded-circle shadow-lg">
             </div>
-            <!--            <div class="col-2 ">-->
-            <!--                &lt;!&ndash; using for blank space&ndash;&gt;-->
-
-            <!--            </div>-->
-            <div class="col ">
-                <img src="img/profile%20picture.jpg" height="300px" width="300px" class="img-fluid" id="my-img"
-                     style="margin-left: 3em; "
-                     alt="ANDRAWES BATSHOUN">
-                <div id="myModal" class="modal">
-                    <span class="close">&times;</span>
-                    <img src="img/profile%20picture.jpg" height="500px" width="500px" id="modal-img">
-                    <div id="caption"></div>
-                </div>
+            <div class="col-md-6">
+                <h2>About Me</h2>
+                <p>
+                    I am a U.S. Army veteran turned software developer with a passion for problem-solving, cybersecurity, and web development.
+                    My background in the Army has given me a unique approach to troubleshooting and efficiency in coding.
+                </p>
+                <p>
+                    I specialize in Java, Spring Boot, Angular, and database management. Always eager to learn and collaborate on meaningful projects.
+                </p>
             </div>
         </div>
     </div>
-</header>
-<main id="about-me">
-    <div style="width: 80%; margin: 0 auto; padding-top: 2em; padding-bottom: 2em;">
-        <h4>About Me</h4>
-        <p>I served the US Army for 8 years as an Aircraft Technician. There, I developed an ever-growing interest
-            of the Tech industry such as networking, Cyber-security, clouding computing, and much more. It all was so
-            new
-            and captivating. After completing my service in the Army I was honorably discharged, I moved place to place
-            till
-            I settled down in North Carolina. </p>
-        <br>
-        <p>I completed my degree in Cyber-Security and Networking. I am also blessed to be able to attend Codeup's web
-            developer program that set me on the path I belong. I am a problem solver eager to learn and showcase my
-            skills
-            and talent. Motivated to expand current skill set through new challenges and ready to contribute to life
-            changing projects. </p>
-        <br>
-        <p>When I am not programming or dealing with other projects, I am spending time with family and switch my focus
-            to my hobbies which
-            are: reading, hiking, running, fishing, and participating in Jiu-Jitsu. </p>
-    </div>
-</main>
-<section id="projects">
-    <div style="width: 80%; margin: 0 auto; padding-top: 2em; padding-bottom:2em">
-        <h4>Projects</h4>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Projects</h2>
         <div class="row">
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body bg-dark" style="color: white">
+            <!-- Ad Lister Project -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
                         <h5 class="card-title">Ad Lister Project</h5>
-                        <p class="card-text">A four person project developed with HTML, JavaScript, CSS, BootStrap,
-                            MySQL, Maven, Java EE(Servlets, JSPS), and TomCat.  Users can register to the application
-                            with a unique username, email, and password. When they log in they can create, edit, and
-                            delete ads that are connected to their username and a specific category.  </p>
-<!--                        find way to add project to site-->
-                        <a href="https://github.com/regulus-red-adlister/java-adlister" target="_blank" style="float: right"><i
-                                class="fab fa-github-square fa-3x"></i></a>
+                        <p class="card-text">A four-person project using Java, Servlets, JSP, MySQL, and Bootstrap. Allows users to create, edit, and delete ads.</p>
+                        <a href="https://github.com/regulus-red-adlister/java-adlister" target="_blank" class="btn btn-dark">View on GitHub</a>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body bg-dark" style="color: white">
-                        <h5 class="card-title">Movie Database</h5>
-                        <p class="card-text">A pair programming project utilizing HTML, Bootstrap, and Javascript with
-                            JQuery. Using RESTful API with fetch requests from OMDB api Users are able to
-                            add, edit, and delete movie selections.</p><br><br>
-                        <a href="movies-database.html" target="_blank">View Project</a>
-                        <a href="https://github.com/diaz-batshoun/movie_database" target="_blank"
-                           style="float: right"><i class="fab fa-github-square fa-3x"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body bg-dark" style="color: white">
-                        <h5 class="card-title">Weather Application</h5>
-                        <p class="card-text">Using Mapbox and Open weather API, this web application allows users to
-                            choose a location, either by
-                            dragging and dropping a marker on the map or searching by name. The application will then
-                            give a five-day forecast of the selected
-                            location.</p>
-                        <a href="weather-app.html" target="_blank">View Project</a>
-                        <a href="https://github.com/andrew-batshoun/weather_project" target="_blank"
-                           style="float: right"><i class="fab fa-github-square fa-3x"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body bg-dark" style="color: white">
+            <!-- Coffee Project -->
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
                         <h5 class="card-title">Coffee Project</h5>
-                        <p class="card-text">A pair programming project that utilized HTML, JavaScript, Bootstrap and
-                            CSS. Users are able to
-                            select coffee by roast and name. Users can also add a new coffee to the current list.</p><br><br>
-                        <a href="coffee-project.html" target="_blank">View Project</a>
-                        <a href="https://github.com/dobbs-batshoun/coffee-project" target="_blank" style="float: right"><i
-                                class="fab fa-github-square fa-3x"></i></a>
+                        <p class="card-text">A fully interactive coffee selection tool using JavaScript, Bootstrap 5, and filtering logic for roast selection.</p>
+                        <a href="coffee-project.html" target="_blank" class="btn btn-dark">View Project</a>
+                        <a href="https://github.com/dobbs-batshoun/coffee-project" target="_blank" class="btn btn-outline-dark ms-2">GitHub</a>
                     </div>
                 </div>
             </div>
@@ -272,37 +96,16 @@
     </div>
 </section>
 
-<footer id="contact">
-
-    <h4>Contact Me</h4>
-    <br>
-    <div>
-        <a href="mailto:andrawes.batshoun@gmail.com"><i class="far fa-envelope fa-2x"></i></a>
-        <a href="https://github.com/andrew-batshoun" target="_blank"><i class="fab fa-github fa-2x"></i></i></a>
-        <a href="https://www.linkedin.com/in/abats89" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+<!-- Contact Section -->
+<section id="contact" class="py-5 text-center">
+    <div class="container">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out to me for collaborations or inquiries.</p>
+        <a href="mailto:andrawes.batshoun@gmail.com" class="btn btn-primary">Email Me</a>
     </div>
+</section>
 
-
-</footer>
-
-<!--  jQuery and Bootstrap Bundle  -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
-        crossorigin="anonymous"></script>
-<script>
-    $('#my-img').click(function () {
-        $('#myModal').css('display', 'block');
-        $('#img01').src = this.src;
-        $('#caption').html(this.alt);
-    })
-    $('.close').click(function () {
-        $('#myModal').css('display', 'none');
-    })
-</script>
-
-
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
