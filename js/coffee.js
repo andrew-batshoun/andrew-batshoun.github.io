@@ -1,5 +1,23 @@
 "use strict"
 
+// Load coffees from local storage or use default data
+let coffees = JSON.parse(localStorage.getItem('coffees')) || [
+    {id: 1, name: 'Light City', roast: 'light'},
+    {id: 2, name: 'Half City', roast: 'light'},
+    {id: 3, name: 'Cinnamon', roast: 'light'},
+    {id: 4, name: 'City', roast: 'medium'},
+    {id: 5, name: 'American', roast: 'medium'},
+    {id: 6, name: 'Breakfast', roast: 'medium'},
+    {id: 7, name: 'High', roast: 'dark'},
+    {id: 8, name: 'Continental', roast: 'dark'},
+    {id: 9, name: 'New Orleans', roast: 'dark'},
+    {id: 10, name: 'European', roast: 'dark'},
+    {id: 11, name: 'Espresso', roast: 'dark'},
+    {id: 12, name: 'Viennese', roast: 'dark'},
+    {id: 13, name: 'Italian', roast: 'dark'},
+    {id: 14, name: 'French', roast: 'dark'}
+];
+
 // Function to show modal
 function showModal(message) {
     document.getElementById('modal-message').textContent = message;
@@ -13,6 +31,10 @@ function renderCoffee(coffee) {
         <div class="list-group-item d-flex justify-content-between align-items-center bg-light border rounded p-3 shadow-sm">
             <span class="fw-bold text-uppercase">${coffee.name}</span>
             <span class="text-muted">${coffee.roast}</span>
+            <div>
+                <button class="btn btn-sm btn-warning edit-coffee" data-id="${coffee.id}">Edit</button>
+                <button class="btn btn-sm btn-danger delete-coffee" data-id="${coffee.id}">Delete</button>
+            </div>
         </div>`;
 }
 
@@ -32,6 +54,7 @@ function updateCoffees() {
     );
 
     document.getElementById('coffee-list').innerHTML = renderCoffees(filteredCoffees);
+    attachEventListeners();
 }
 
 // Add new coffee
@@ -55,6 +78,7 @@ function addCoffee(event) {
     };
 
     coffees.push(newCoffee);
+    localStorage.setItem('coffees', JSON.stringify(coffees));
 
     // Reset filter to 'All' and update coffee list
     document.getElementById('roast-selection').value = "all";
@@ -65,23 +89,20 @@ function addCoffee(event) {
     document.getElementById('new-coffee-roast').value = "light";
 }
 
-// Initial Coffee Data
-let coffees = [
-    {id: 1, name: 'Light City', roast: 'light'},
-    {id: 2, name: 'Half City', roast: 'light'},
-    {id: 3, name: 'Cinnamon', roast: 'light'},
-    {id: 4, name: 'City', roast: 'medium'},
-    {id: 5, name: 'American', roast: 'medium'},
-    {id: 6, name: 'Breakfast', roast: 'medium'},
-    {id: 7, name: 'High', roast: 'dark'},
-    {id: 8, name: 'Continental', roast: 'dark'},
-    {id: 9, name: 'New Orleans', roast: 'dark'},
-    {id: 10, name: 'European', roast: 'dark'},
-    {id: 11, name: 'Espresso', roast: 'dark'},
-    {id: 12, name: 'Viennese', roast: 'dark'},
-    {id: 13, name: 'Italian', roast: 'dark'},
-    {id: 14, name: 'French', roast: 'dark'}
-];
+// Delete coffee
+function deleteCoffee(event) {
+    let coffeeId = parseInt(event.target.getAttribute("data-id"));
+    coffees = coffees.filter(coffee => coffee.id !== coffeeId);
+    localStorage.setItem('coffees', JSON.stringify(coffees));
+    updateCoffees();
+}
+
+// Attach event listeners for dynamic elements
+function attachEventListeners() {
+    document.querySelectorAll('.delete-coffee').forEach(button =>
+        button.addEventListener('click', deleteCoffee)
+    );
+}
 
 // Event Listeners
 document.getElementById('roast-selection').addEventListener('change', updateCoffees);
