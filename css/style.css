@@ -4,8 +4,8 @@ body {
     padding-top: 70px;
 }
 
-/* Hero Section */
-.hero {
+/* Header Section */
+.header {
     height: 80vh;
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     color: white;
@@ -15,12 +15,12 @@ body {
     text-align: center;
 }
 
-.hero h1 {
+.header h1 {
     font-weight: 700;
     font-size: 3rem;
 }
 
-.hero p {
+.header p {
     font-size: 1.5rem;
 }
 

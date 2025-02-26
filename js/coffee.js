@@ -2,20 +2,20 @@
 
 // Load coffees from local storage or use default data
 let coffees = JSON.parse(localStorage.getItem('coffees')) || [
-    {id: 1, name: 'Light City', roast: 'light'},
-    {id: 2, name: 'Half City', roast: 'light'},
-    {id: 3, name: 'Cinnamon', roast: 'light'},
-    {id: 4, name: 'City', roast: 'medium'},
-    {id: 5, name: 'American', roast: 'medium'},
-    {id: 6, name: 'Breakfast', roast: 'medium'},
-    {id: 7, name: 'High', roast: 'dark'},
-    {id: 8, name: 'Continental', roast: 'dark'},
-    {id: 9, name: 'New Orleans', roast: 'dark'},
-    {id: 10, name: 'European', roast: 'dark'},
-    {id: 11, name: 'Espresso', roast: 'dark'},
-    {id: 12, name: 'Viennese', roast: 'dark'},
-    {id: 13, name: 'Italian', roast: 'dark'},
-    {id: 14, name: 'French', roast: 'dark'}
+    {id: 1, name: 'Light City', roast: 'light', favorite: false, brew: 'Best for Pour Over'},
+    {id: 2, name: 'Half City', roast: 'light', favorite: false, brew: 'Great for Chemex'},
+    {id: 3, name: 'Cinnamon', roast: 'light', favorite: false, brew: 'Perfect for Drip Machines'},
+    {id: 4, name: 'City', roast: 'medium', favorite: false, brew: 'Best for Espresso'},
+    {id: 5, name: 'American', roast: 'medium', favorite: false, brew: 'Ideal for French Press'},
+    {id: 6, name: 'Breakfast', roast: 'medium', favorite: false, brew: 'Good for Drip Coffee'},
+    {id: 7, name: 'High', roast: 'dark', favorite: false, brew: 'Great for Moka Pot'},
+    {id: 8, name: 'Continental', roast: 'dark', favorite: false, brew: 'Perfect for Cold Brew'},
+    {id: 9, name: 'New Orleans', roast: 'dark', favorite: false, brew: 'Best for Chicory Blend'},
+    {id: 10, name: 'European', roast: 'dark', favorite: false, brew: 'Good for Turkish Coffee'},
+    {id: 11, name: 'Espresso', roast: 'dark', favorite: false, brew: 'Designed for Espresso Machines'},
+    {id: 12, name: 'Viennese', roast: 'dark', favorite: false, brew: 'Great for French Press'},
+    {id: 13, name: 'Italian', roast: 'dark', favorite: false, brew: 'Perfect for Cappuccinos'},
+    {id: 14, name: 'French', roast: 'dark', favorite: false, brew: 'Best for Latte Art'}
 ];
 
 // Function to show modal
@@ -28,12 +28,15 @@ function showModal(message) {
 // Render coffee item
 function renderCoffee(coffee) {
     return `
-        <div class="list-group-item d-flex justify-content-between align-items-center bg-light border rounded p-3 shadow-sm">
-            <span class="fw-bold text-uppercase">${coffee.name}</span>
-            <span class="text-muted">${coffee.roast}</span>
-            <div>
-                <button class="btn btn-sm btn-warning edit-coffee" data-id="${coffee.id}">Edit</button>
+        <div class="list-group-item d-flex flex-column bg-light border rounded p-3 shadow-sm">
+            <div class="d-flex justify-content-between align-items-center w-100">
+                <span class="fw-bold text-uppercase editable" data-id="${coffee.id}" contenteditable="false">${coffee.name}</span>
+                <span class="text-muted">${coffee.roast}</span>
+            </div>
+            <p class="text-muted small mt-1">${coffee.brew || 'No brewing recommendation available'}</p>
+            <div class="mt-2">
                 <button class="btn btn-sm btn-danger delete-coffee" data-id="${coffee.id}">Delete</button>
+                <button class="btn btn-sm ${coffee.favorite ? 'btn-success' : 'btn-outline-success'} favorite-coffee" data-id="${coffee.id}">⭐</button>
             </div>
         </div>`;
 }
@@ -74,7 +77,9 @@ function addCoffee(event) {
     let newCoffee = {
         id: coffees.length + 1,
         name: newName,
-        roast: newRoast
+        roast: newRoast,
+        favorite: false,
+        brew: 'Brewing method not specified'
     };
 
     coffees.push(newCoffee);
@@ -89,6 +94,7 @@ function addCoffee(event) {
     document.getElementById('new-coffee-roast').value = "light";
 }
 
+
 // Delete coffee
 function deleteCoffee(event) {
     let coffeeId = parseInt(event.target.getAttribute("data-id"));
@@ -97,10 +103,27 @@ function deleteCoffee(event) {
     updateCoffees();
 }
 
+// Toggle favorite status
+function toggleFavorite(event) {
+    let coffeeId = parseInt(event.target.getAttribute("data-id"));
+    coffees = coffees.map(coffee =>
+        coffee.id === coffeeId ? {...coffee, favorite: !coffee.favorite} : coffee
+    );
+    localStorage.setItem('coffees', JSON.stringify(coffees));
+    updateCoffees();
+}
+
+
 // Attach event listeners for dynamic elements
 function attachEventListeners() {
+    document.querySelectorAll('.save-coffee').forEach(button =>
+        button.addEventListener('click', saveCoffee)
+    );
     document.querySelectorAll('.delete-coffee').forEach(button =>
         button.addEventListener('click', deleteCoffee)
+    );
+    document.querySelectorAll('.favorite-coffee').forEach(button =>
+        button.addEventListener('click', toggleFavorite)
     );
 }
 
