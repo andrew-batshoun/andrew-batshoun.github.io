@@ -1,5 +1,12 @@
 "use strict"
 
+// Function to show modal
+function showModal(message) {
+    document.getElementById('modal-message').textContent = message;
+    let modal = new bootstrap.Modal(document.getElementById('errorModal'));
+    modal.show();
+}
+
 // Render coffee item
 function renderCoffee(coffee) {
     return `
@@ -37,7 +44,7 @@ function addCoffee(event) {
 
     // Check for duplicate
     if (coffees.some(coffee => coffee.name.toLowerCase() === newName.toLowerCase())) {
-        alert("This coffee already exists!");
+        showModal("This coffee already exists!");
         return;
     }
 
